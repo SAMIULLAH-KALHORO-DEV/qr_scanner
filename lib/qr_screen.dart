@@ -11,12 +11,12 @@ class QRscreen extends StatefulWidget {
   State<QRscreen> createState() => _QRscreenState();
 }
 
-bool isScanCompleted = false;
-void CloseScreen() {
-  isScanCompleted = false;
-}
-
 class _QRscreenState extends State<QRscreen> {
+  bool isScanCompleted = false;
+  void closeScreen() {
+    isScanCompleted = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,12 +58,13 @@ class _QRscreenState extends State<QRscreen> {
             child: MobileScanner(
               onDetect: (barcodes) {
                 if (!isScanCompleted) {
-                  String code = barcodes.raw ?? "---";
+                  String code = barcodes.raw ?? '---';
                   isScanCompleted = true;
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ResultScreen(),
+                        builder: (context) =>
+                            ResultScreen(closeScreen: closeScreen, code: code),
                       ));
                 }
               },
