@@ -35,24 +35,22 @@ class _QRscreenState extends State<QRscreen> {
         padding: const EdgeInsets.all(16),
         child: Column(children: [
           Expanded(
-              child: Container(
-                  // color: Colors.red,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
                 Text(
-                  "Place the QR code in that aera ",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                      letterSpacing: 1),
+              "Place the QR code in that aera ",
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                  letterSpacing: 1),
                 ),
                 SizedBox(height: 10),
                 Text("Scanning will be started automatically",
-                    style: TextStyle(
-                        fontSize: 16, color: Colors.black54, letterSpacing: 1)),
-              ]))),
+                style: TextStyle(
+                    fontSize: 16, color: Colors.black54, letterSpacing: 1)),
+              ])),
           Expanded(
             flex: 4,
             child: MobileScanner(

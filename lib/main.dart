@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent, elevation:0.0)),
       debugShowCheckedModeBanner: false,
       title: "QR Scanner",
-      home:  QRscreen(),
+      home: const QRscreen(),
     );
   }
 }
